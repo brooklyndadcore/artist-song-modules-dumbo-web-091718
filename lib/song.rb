@@ -1,9 +1,7 @@
 require 'pry'
 
 class Song
-  attr_accessor :name
-  attr_reader :artist
-
+  attr_accessor :name, :artist
   @@songs = []
 
   def initialize
@@ -26,11 +24,8 @@ class Song
     self.all.count
   end
 
-  def artist=(artist)
-    @artist = artist
-  end
-
   def to_param
     name.downcase.gsub(' ', '-')
   end
+
 end

@@ -2,13 +2,10 @@ require 'pry'
 
 class Artist
   attr_accessor :name
-  attr_reader :songs
-
-  @@artists = []
+  @@all = []
 
   def initialize
     @@artists << self
-    @songs = []
   end
 
   def self.find_by_name(name)
@@ -16,7 +13,7 @@ class Artist
   end
 
   def self.all
-    @@artists
+    @@all
   end
 
   def self.reset_all
@@ -28,7 +25,6 @@ class Artist
   end
 
   def add_song(song)
-    @songs << song
     song.artist = self
   end
 
